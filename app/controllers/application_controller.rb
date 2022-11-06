@@ -5,14 +5,8 @@ class ApplicationController < ActionController::API
 
 #     before_action :authorized_buyer
 
-
-#     def current_buyer
-#       buyer = Buyer.find_by(id: session[:buyer_id])
-#       buyer
-#     end
-
 #     def authorized_buyer
-#         return render json: { error: "Not authorized" }, status: :unauthorized unless current_buyer
+#         return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :buyer_id
 #     end
 
 #     private
