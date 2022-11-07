@@ -5,6 +5,7 @@ import { Button } from "../styles";
 
 function NavBar({ buyer, setBuyer }) {
   function handleLogoutClick() {
+    console.log( "Click")
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setBuyer(false);

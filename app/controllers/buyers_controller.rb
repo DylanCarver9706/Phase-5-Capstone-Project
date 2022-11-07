@@ -2,7 +2,7 @@ class BuyersController < ApplicationController
     
     def show
         
-        current_buyer = Buyer.find_(session[:buyer_id])
+        current_buyer = Buyer.find_by(session[:buyer_id])
         render json: current_buyer
     end
 

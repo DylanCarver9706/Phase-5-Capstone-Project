@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
+// , {useState, useEffect}
 
 function ItemCard({ item }) {
 
@@ -23,7 +24,7 @@ function ItemCard({ item }) {
   // setInCart(inCart => !inCart)
   return (
     <li className="card">
-      <img src={item.image_url} alt={"item name"} />
+      <img src={item.image_url} alt={item.item_name} />
       <h4>{item.item_name}</h4>
       <p>Price: ${item.price}</p>
       <p>* {item.description} *</p>

@@ -33,7 +33,7 @@ function LoginForm({ onLogin }) {
         <Input
           type="text"
           id="email"
-          autoComplete="off"
+          autoComplete="on"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />

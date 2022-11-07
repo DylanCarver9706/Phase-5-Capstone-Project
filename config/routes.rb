@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   resources :buyers, only: [:show, :create, :destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # post '/signup', to: 'buyers#create'
-  # get '/me', to: 'buyers#show'
-  # post '/login', to: 'sessions#create'
-  # delete '/logout', to: 'sessions#destroy'
+  post '/signup', to: 'buyers#create'
+  get '/me', to: 'buyers#show'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   
   # route to test your configuration
   # get '/hello', to: 'application#hello_world'

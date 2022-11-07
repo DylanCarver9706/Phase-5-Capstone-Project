@@ -1,21 +1,25 @@
 class ApplicationController < ActionController::API
-#     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
-#     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-#     include ActionController::Cookies
+    # rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
+    # rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+    include ActionController::Cookies
 
-#     before_action :authorized_buyer
+    # before_action :current_buyer
 
-#     def authorized_buyer
-#         return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :buyer_id
-#     end
+    # def authorized_buyer
+    #     return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :buyer_id
+    # end
 
-#     private
+    # def current_buyer
+    #     Buyer.find_by(id: session[:buyer_id])
+    # end
 
-#     def render_unprocessable_entity(invalid)
-#         render json: {errors: invalid.record.errors}, status: :unprocessable_entity
-#     end 
+    private
 
-#      def render_not_found(error)
-#         render json: {errors: {error.model => "Not Found"}}, status: :not_found
-#     end 
+    # def render_unprocessable_entity(invalid)
+    #     render json: {errors: invalid.record.errors}, status: :unprocessable_entity
+    # end 
+
+    #  def render_not_found(error)
+    #     render json: {errors: {error.model => "Not Found"}}, status: :not_found
+    # end 
 end

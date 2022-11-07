@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+// 
+import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
@@ -24,17 +25,22 @@ function App() {
   if (!buyer) return <Login onLogin={setBuyer} />;
 
   return (
-    <BrowserRouter>
+    <>
       <NavBar buyer={buyer} setBuyer={setBuyer} />
       <div className="App">
         <Switch>
-          <Route path="/"><Home/></Route>
-          <Route path="/purchases">
-            {/* <Items /> */}
+
+          <Route exact path="/">
+            <Home />
           </Route>
+
+          {/* <Route path="/purchases"> */}
+          {/* <Purchases/> */}
+          {/* </Route> */}
+
         </Switch>
       </div>
-    </BrowserRouter>
+    </>
   );
 }
 
