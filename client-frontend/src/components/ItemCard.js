@@ -1,39 +1,38 @@
-import React from "react";
-// , {useState, useEffect}
+import React, { useState } from "react";
 
 function ItemCard({ item }) {
+// console.log(item)
+  const [addToCart, setAddToCart] = useState(item.cart_status)
 
-  // const [addToCart, setAddToCart] = useState(false)
-  // const [inCart, setInCart] = useState(false)
+  const handleAddToCart = () => {
+    setAddToCart(addToCart => !addToCart)
 
-  // const handleAddToCart = () => {
-  // const [inCart, setInCart] = useState(true)
+    fetch(`/items/${item.id}`, {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": 'application/json',
+      },
+      body: JSON.stringify({cart_status: !item.cart_status})
+    })
+      .then(resp => resp.json())
+      
+      .then(data => console.log(data))
+  }
+  
 
-  // fetch(`/items`, {
-  //     method: 'PATCH',
-  //     headers: {
-  //       "Content-Type": 'application/json',
-  //     },
-  //     body: JSON.stringify(inCart)
-  //   })
-  //     .then(resp => resp.json())
-  //     .then(item(inCart))
-
-
-  // }
-  // setInCart(inCart => !inCart)
+  
   return (
-    <li className="card">
-      <img src={item.image_url} alt={item.item_name} />
+    <div className="card">
+      <img src={item.img_url} alt={item.item_name} />
       <h4>{item.item_name}</h4>
       <p>Price: ${item.price}</p>
       <p>* {item.description} *</p>
-      {/* {addToCart ? (
-        <button className="primary" onClick={handleAddToCart}>Add To Cart</button>
-      ) : (
+      {addToCart ? (
         <button onClick={handleAddToCart}>Remove From Cart</button>
-      )} */}
-    </li>
+        ) : (
+          <button className="primary" onClick={handleAddToCart}>Add To Cart</button>
+          )}
+    </div>
   );
 }
 

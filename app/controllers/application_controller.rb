@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
     # rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     include ActionController::Cookies
 
-    # before_action :current_buyer
+    before_action :authenticate_user
 
     # def authorized_buyer
     #     return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :buyer_id
@@ -13,13 +13,15 @@ class ApplicationController < ActionController::API
     #     Buyer.find_by(id: session[:buyer_id])
     # end
 
+
     private
 
-    # def render_unprocessable_entity(invalid)
-    #     render json: {errors: invalid.record.errors}, status: :unprocessable_entity
-    # end 
+    def authenticate_user
+        @current_user ||= Buyer.find_by(id: session[:buyer_id])
+        render json: { error: "Please log in or sign up to view"}, status: :unauthorized unless @current_user 
+    end
 
-    #  def render_not_found(error)
-    #     render json: {errors: {error.model => "Not Found"}}, status: :not_found
-    # end 
+    def invalid(invalid)
+        render json: { error: invalid.record.errors.full_messages }, status: :unprocessable_entity
+    end
 end

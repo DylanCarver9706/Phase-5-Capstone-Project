@@ -1,8 +1,8 @@
 puts "Seeding Buyers...👨👩"
 
-b1 = Buyer.create(full_name: "Dylan Carver", username: "dylancarver19", email: "dylancarver@gmail.com", password_digest: "1234", address: "123 Main St.")
-b2 = Buyer.create(full_name: "Kristen Carver", username: "kristencarver23", email: "kristencarver@gmail.com", password_digest: "1234", address: "1234 Main St.")
-b3 = Buyer.create(full_name: "Winter Carver", username: "wintercarver21", email: "wintercarver@gmail.com", password_digest: "1234", address: "12345 Main St.")
+b1 = Buyer.create(full_name: "Dylan Carver", username: "dylancarver19", email: "dylancarver@gmail.com", password: "1234", address: "123 Main St.")
+b2 = Buyer.create(full_name: "Kristen Carver", username: "kristencarver23", email: "kristencarver@gmail.com", password: "1234", address: "1234 Main St.")
+b3 = Buyer.create(full_name: "Winter Carver", username: "wintercarver21", email: "wintercarver@gmail.com", password: "1234", address: "12345 Main St.")
 
 puts "Seeding Items...📦📦📦"
 

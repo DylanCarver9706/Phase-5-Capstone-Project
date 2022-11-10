@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
+import Cart from "../pages/Cart";
 
 
 
@@ -34,9 +35,9 @@ function App() {
             <Home />
           </Route>
 
-          {/* <Route path="/purchases"> */}
-          {/* <Purchases/> */}
-          {/* </Route> */}
+          <Route path="/cart">
+            <Cart />
+          </Route>
 
         </Switch>
       </div>

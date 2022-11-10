@@ -16,10 +16,10 @@ function NavBar({ buyer, setBuyer }) {
   return (
     <Wrapper>
       <Logo>
-        <Link to="/">StuffMart</Link>
+        <Link to="/">WendyMart</Link>
       </Logo>
       <Nav>
-        <Button as={Link} to="/purchasedItems">
+        <Button as={Link} to="/me">
           Recent Purchases
         </Button>
         {/* <Button as={Link} to="/new">
@@ -27,6 +27,9 @@ function NavBar({ buyer, setBuyer }) {
         </Button> */}
         <Button variant="outline" onClick={handleLogoutClick}>
           Logout
+        </Button>
+        <Button as={Link} to="/cart">
+          Cart
         </Button>
       </Nav>
     </Wrapper>
