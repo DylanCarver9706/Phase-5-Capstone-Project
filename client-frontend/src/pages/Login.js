@@ -9,7 +9,7 @@ function Login({ onLogin }) {
 
   return (
     <Wrapper>
-      <Logo>StuffMart</Logo>
+      <Logo>WendyMart</Logo>
       {showLogin ? (
         <>
           <LoginForm onLogin={onLogin} />

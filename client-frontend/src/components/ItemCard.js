@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function ItemCard({ item }) {
-// console.log(item)
+  // console.log(item)
   const [addToCart, setAddToCart] = useState(item.cart_status)
 
   const handleAddToCart = () => {
@@ -12,15 +12,15 @@ function ItemCard({ item }) {
       headers: {
         "Content-Type": 'application/json',
       },
-      body: JSON.stringify({cart_status: !item.cart_status})
+      body: JSON.stringify({ cart_status: !item.cart_status })
     })
       .then(resp => resp.json())
-      
+
       .then(data => console.log(data))
   }
-  
 
-  
+
+
   return (
     <div className="card">
       <img src={item.img_url} alt={item.item_name} />
@@ -29,9 +29,9 @@ function ItemCard({ item }) {
       <p>* {item.description} *</p>
       {addToCart ? (
         <button onClick={handleAddToCart}>Remove From Cart</button>
-        ) : (
-          <button className="primary" onClick={handleAddToCart}>Add To Cart</button>
-          )}
+      ) : (
+        <button className="primary" onClick={handleAddToCart}>Add To Cart</button>
+      )}
     </div>
   );
 }

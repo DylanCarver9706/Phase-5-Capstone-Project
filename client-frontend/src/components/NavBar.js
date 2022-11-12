@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Button } from "../styles";
 
 function NavBar({ buyer, setBuyer }) {
+
   function handleLogoutClick() {
     console.log( "Click")
     fetch("/logout", { method: "DELETE" }).then((r) => {
@@ -12,15 +13,15 @@ function NavBar({ buyer, setBuyer }) {
       }
     });
   }
-
+  // console.log(items)
   return (
     <Wrapper>
       <Logo>
         <Link to="/">WendyMart</Link>
       </Logo>
       <Nav>
-        <Button as={Link} to="/me">
-          Recent Purchases
+        <Button as={Link} to="/purchases">
+          Purchases
         </Button>
         {/* <Button as={Link} to="/new">
           Sell Your Stuff
@@ -28,7 +29,7 @@ function NavBar({ buyer, setBuyer }) {
         <Button variant="outline" onClick={handleLogoutClick}>
           Logout
         </Button>
-        <Button as={Link} to="/cart">
+        <Button as={Link} to="/cart" >
           Cart
         </Button>
       </Nav>
