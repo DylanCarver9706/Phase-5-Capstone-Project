@@ -1,4 +1,10 @@
 class PurchasedItemsController < ApplicationController
+    skip_before_action :authenticate_user, only: :index
+
+    def index
+        render json: PurchasedItem.all, status: :ok
+    end
+    
     def show
         purchased_item = PurchasedItem.find(params[:id])
         render json: purchased_item, status: :ok
