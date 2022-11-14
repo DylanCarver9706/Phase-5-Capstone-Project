@@ -15,8 +15,9 @@ function ItemCard({ item }) {
       body: JSON.stringify({ cart_status: !item.cart_status })
     })
       .then(resp => resp.json())
-
       .then(data => console.log(data))
+
+      window.location.reload(false)
   }
 
 

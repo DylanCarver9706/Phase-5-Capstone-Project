@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :items, only: [:index, :show, :create, :update, :destroy]
-  resources :purchased_items, only: [:show, :create]
+  resources :purchased_items, only: [:index, :show, :create]
   resources :buyers, only: [:show, :create, :destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

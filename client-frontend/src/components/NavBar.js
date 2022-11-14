@@ -29,9 +29,12 @@ function NavBar({ buyer, setBuyer }) {
         <Button variant="outline" onClick={handleLogoutClick}>
           Logout
         </Button>
-        <Button as={Link} to="/cart" >
+        {/* <Button as={Link} to="/cart" >
           Cart
-        </Button>
+        </Button> */}
+        <Link to="/cart">
+        <img className="cartphoto" style={{ width: 35, height: 35 }} src="https://www.freeiconspng.com/thumbs/shopping-cart-icon/shopping-cart-icon-2.png" alt="Shopping Cart Icon" ></img>
+        </Link>
       </Nav>
     </Wrapper>
   );

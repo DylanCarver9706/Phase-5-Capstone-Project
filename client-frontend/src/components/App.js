@@ -4,6 +4,8 @@ import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Cart from "../pages/Cart";
 import Purchases from "../pages/Purchases";
+import NavBar from "../components/NavBar"
+import Checkout from "./Checkout";
 
 
 
@@ -26,20 +28,24 @@ function App() {
 
   return (
     <>
-      {/* <NavBar buyer={buyer} setBuyer={setBuyer} /> */}
+      <NavBar buyer={buyer} setBuyer={setBuyer} />
       <div className="App">
         <Switch>
 
           <Route exact path="/">
-            <Home buyer={buyer} setBuyer={setBuyer}/>
+            <Home />
           </Route>
 
           <Route path="/cart">
-            <Cart buyer={buyer}/>
+            <Cart />
           </Route>
 
           <Route path="/purchases">
-            <Purchases />
+            <Purchases buyer={buyer}/>
+          </Route>
+
+          <Route path="/checkout">
+            <Checkout buyer={buyer}/>
           </Route>
 
         </Switch>

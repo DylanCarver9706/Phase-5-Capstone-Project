@@ -28,7 +28,7 @@ iimg4 = "https://www.gskill.com/_upload/images/1908121830273.png"
 iimg5 = "https://tpucdn.com/cpu-specs/images/chips/2817-package.jpg"
 iimg6 = "https://tpucdn.com/cpu-specs/images/chips/2846-package.jpg"
 iimg7 = "https://image-us.samsung.com/SamsungUS/samsungbusiness/products/computing/ssd/client/980-pro/2tb/MZ-V8P2T0BW_001_Front_Black.jpg?$product-details-jpg$"
-iimg8 = ""
+iimg8 = "https://tpucdn.com/ssd-specs/images/d/829-front.small.jpg"
 
 i1 = Item.create(item_name: "NVIDIA GeForce RTX 4090 Ti", price: 1599, img_url: iimg1, description: ides1, category: "GPU", cart_status: false, sold_status: false, manufacturer: "Nvidia", clock_speed: 2625 , capacity: nil)
 
