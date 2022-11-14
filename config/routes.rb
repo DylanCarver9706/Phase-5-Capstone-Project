@@ -8,10 +8,6 @@ Rails.application.routes.draw do
   get '/me', to: 'buyers#show'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  # get '/cart', to: 'items#index'
-  
-  # route to test your configuration
-  # get '/hello', to: 'application#hello_world'
 
   get '*path',
       to: 'fallback#index',
