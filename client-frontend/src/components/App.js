@@ -5,13 +5,10 @@ import Home from "../pages/Home";
 import Cart from "../pages/Cart";
 import Purchases from "../pages/Purchases";
 import NavBar from "../components/NavBar"
-import Checkout from "./Checkout";
-
-
+import Checkout from "../pages/Checkout";
 
 function App() {
   const [buyer, setBuyer] = useState(null);
-
 
   useEffect(() => {
     // auto-login
@@ -21,8 +18,6 @@ function App() {
       }
     });
   }, []);
-
-  // console.log(buyer)
 
   if (!buyer) return <Login onLogin={setBuyer} />;
 
@@ -41,11 +36,11 @@ function App() {
           </Route>
 
           <Route path="/purchases">
-            <Purchases buyer={buyer}/>
+            <Purchases buyer={buyer} />
           </Route>
 
           <Route path="/checkout">
-            <Checkout buyer={buyer}/>
+            <Checkout buyer={buyer} />
           </Route>
 
         </Switch>

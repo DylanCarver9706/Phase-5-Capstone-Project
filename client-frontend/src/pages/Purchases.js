@@ -16,8 +16,6 @@ function Purchases({ buyer }) {
     })
     console.log(buyerPurchasedItems)
 
-
-    
     return (
         <div>
             <h1>Hello, {buyer.full_name}</h1>

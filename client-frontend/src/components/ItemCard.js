@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function ItemCard({ item }) {
-  // console.log(item)
+
   const [addToCart, setAddToCart] = useState(item.cart_status)
 
   const handleAddToCart = () => {
@@ -17,10 +17,8 @@ function ItemCard({ item }) {
       .then(resp => resp.json())
       .then(data => console.log(data))
 
-      window.location.reload(false)
+    window.location.reload(false)
   }
-
-
 
   return (
     <div className="card">

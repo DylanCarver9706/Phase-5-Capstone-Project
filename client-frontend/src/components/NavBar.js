@@ -6,36 +6,39 @@ import { Button } from "../styles";
 function NavBar({ buyer, setBuyer }) {
 
   function handleLogoutClick() {
-    console.log( "Click")
+    console.log("Click")
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setBuyer(false);
       }
     });
   }
-  // console.log(items)
+
   return (
     <Wrapper>
+
       <Logo>
         <Link to="/">WendyMart</Link>
       </Logo>
+
       <Nav>
         <Button as={Link} to="/purchases">
           Purchases
         </Button>
+
         {/* <Button as={Link} to="/new">
           Sell Your Stuff
         </Button> */}
+
         <Button variant="outline" onClick={handleLogoutClick}>
           Logout
         </Button>
-        {/* <Button as={Link} to="/cart" >
-          Cart
-        </Button> */}
+
         <Link to="/cart">
-        <img className="cartphoto" style={{ width: 35, height: 35 }} src="https://www.freeiconspng.com/thumbs/shopping-cart-icon/shopping-cart-icon-2.png" alt="Shopping Cart Icon" ></img>
+          <img className="cartphoto" style={{ width: 35, height: 35 }} src="https://www.freeiconspng.com/thumbs/shopping-cart-icon/shopping-cart-icon-2.png" alt="Shopping Cart Icon" ></img>
         </Link>
       </Nav>
+
     </Wrapper>
   );
 }

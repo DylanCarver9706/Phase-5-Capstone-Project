@@ -1,6 +1,4 @@
 function ItemCardPurchases({ specificPurchasedItems }) {
-    // console.log(specificPurchasedItems)
-
 
     return (
         <div className="card">
@@ -13,21 +11,3 @@ function ItemCardPurchases({ specificPurchasedItems }) {
 }
 
 export default ItemCardPurchases;
-
-
-
-
-
-
-
-
-
-// 
-// 
-// 
-// Figure out why cart items are still rendered after function onClick!!
-            // window.location.reload(false)
-
-// 
-// 
-// 

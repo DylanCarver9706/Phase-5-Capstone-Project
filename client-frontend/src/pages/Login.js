@@ -5,11 +5,14 @@ import SignUpForm from "../components/SignUpForm";
 import { Button } from "../styles";
 
 function Login({ onLogin }) {
+
   const [showLogin, setShowLogin] = useState(true);
 
   return (
     <Wrapper>
+
       <Logo>WendyMart</Logo>
+
       {showLogin ? (
         <>
           <LoginForm onLogin={onLogin} />
@@ -33,6 +36,7 @@ function Login({ onLogin }) {
           </p>
         </>
       )}
+
     </Wrapper>
   );
 }
